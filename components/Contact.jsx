@@ -42,7 +42,7 @@ export default function Contact() {
           <FaLinkedin />
         </a>
         <a
-          href="/finalPortfolio/Yourcv.pdf"
+          href="/finalPortfolio/yourcv.pdf"
           download
           className="bg-[#d62828] px-6 py-2 rounded text-white text-base hover:bg-[#a61c1c] transition-colors"
         >
