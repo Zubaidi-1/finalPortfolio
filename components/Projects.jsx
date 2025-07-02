@@ -25,7 +25,7 @@ export default function Projects() {
       name: "Price Match",
       description:
         "A calculator app that helps employees get prices for parts. Built with React and Tailwind CSS.",
-      imagePath: "/image.png",
+      imagePath: "/finalportfolio/image.png",
       github: "https://github.com/zubaidi-1/PriceMatch",
       live: "https://zubaidi-1.github.io/PriceMatch/",
     },
@@ -33,7 +33,7 @@ export default function Projects() {
       name: "Social Media",
       description:
         "A website for people to post, like and follow other users. Built with React, Tailwind CSS and NodeJS.",
-      imagePath: "/image.png",
+      imagePath: "/finalportfolio/image.png",
       github: "https://github.com/zubaidi-1/SocialMedia",
       live: "https://zubaidi-1.github.io/SocialMedia",
     },
