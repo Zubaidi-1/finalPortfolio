@@ -25,7 +25,7 @@ export default function Projects() {
       name: "Price Match",
       description:
         "A calculator app that helps employees get prices for parts. Built with React and Tailwind CSS.",
-      imagePath: "/finalPortfolio/image.png",
+      imagePath: "/finalPortfolio/image1.png",
       github: "https://github.com/zubaidi-1/PriceMatch",
       live: "https://zubaidi-1.github.io/PriceMatch/",
     },
@@ -33,9 +33,30 @@ export default function Projects() {
       name: "Social Media",
       description:
         "A website for people to post, like and follow other users. Built with React, Tailwind CSS and NodeJS.",
-      imagePath: "/finalPortfolio/image.png",
+      imagePath: "/finalPortfolio/social.png",
       github: "https://github.com/zubaidi-1/SocialMedia",
-      live: "https://zubaidi-1.github.io/SocialMedia",
+    },
+    {
+      name: "Sudoko",
+      description:
+        "A Sudoku Game, With multiple difficulties. Built with React, Tailwind CSS.",
+      imagePath: "/finalPortfolio/image.png",
+      github: "https://github.com/zubaidi-1/sudoku/",
+      live: "https://zubaidi-1.github.io/sudoku",
+    },
+    {
+      name: "Expense Tracker",
+      description:
+        "An Expenses tracker, With different categories. Built with React, Tailwind CSS and NodeJS.",
+      imagePath: "/finalPortfolio/expense.png",
+      github: "https://github.com/zubaidi-1/toDo/",
+    },
+    {
+      name: "Anime",
+      description:
+        "An Anime Website, With different categories. Built with React, Tailwind CSS and NodeJS.",
+      imagePath: "/finalPortfolio/Anime.png",
+      github: "https://github.com/zubaidi-1/toDo/",
     },
   ];
 
@@ -110,15 +131,20 @@ export default function Projects() {
                   >
                     <FaGithub size={24} />
                   </a>
-                  <a
-                    href={projects[current].live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-black transition"
-                    aria-label="Live Site"
-                  >
-                    <FaExternalLinkAlt size={20} />
-                  </a>
+
+                  {projects[current].live ? (
+                    <a
+                      href={projects[current].live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-black transition"
+                      aria-label="Live Site"
+                    >
+                      <FaExternalLinkAlt size={20} />
+                    </a>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
             </motion.div>
