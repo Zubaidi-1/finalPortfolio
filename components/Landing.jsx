@@ -37,7 +37,7 @@ export default function Landing() {
             transition={{ duration: 0.1, ease: "easeOut" }}
             className="mt-4 px-6 py-2 bg-white text-[#d62828] rounded-full font-semibold hover:bg-gray-100 transition"
           >
-            Let’s Connect
+            <a href="mailto:abdallazubaidi7@gmail.com"> Let’s Connect</a>
           </motion.button>
         </motion.div>
       </div>

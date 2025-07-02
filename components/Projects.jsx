@@ -25,7 +25,7 @@ export default function Projects() {
       name: "Price Match",
       description:
         "A calculator app that helps employees get prices for parts. Built with React and Tailwind CSS.",
-      imagePath: "/finalPortfolio/image1.png",
+      imagePath: import.meta.env.BASE_URL + "image1.png",
       github: "https://github.com/zubaidi-1/PriceMatch",
       live: "https://zubaidi-1.github.io/PriceMatch/",
     },
@@ -33,14 +33,14 @@ export default function Projects() {
       name: "Social Media",
       description:
         "A website for people to post, like and follow other users. Built with React, Tailwind CSS and NodeJS.",
-      imagePath: "/finalPortfolio/social.png",
+      imagePath: import.meta.env.BASE_URL + "social.png",
       github: "https://github.com/zubaidi-1/SocialMedia",
     },
     {
       name: "Sudoko",
       description:
         "A Sudoku Game, With multiple difficulties. Built with React, Tailwind CSS.",
-      imagePath: "/finalPortfolio/image.png",
+      imagePath: import.meta.env.BASE_URL + "image.png",
       github: "https://github.com/zubaidi-1/sudoku/",
       live: "https://zubaidi-1.github.io/sudoku",
     },
@@ -48,14 +48,14 @@ export default function Projects() {
       name: "Expense Tracker",
       description:
         "An Expenses tracker, With different categories. Built with React, Tailwind CSS and NodeJS.",
-      imagePath: "/finalPortfolio/expense.png",
+      imagePath: import.meta.env.BASE_URL + "expense.png",
       github: "https://github.com/zubaidi-1/toDo/",
     },
     {
       name: "Anime",
       description:
         "An Anime Website, With different categories. Built with React, Tailwind CSS and NodeJS.",
-      imagePath: "/finalPortfolio/Anime.png",
+      imagePath: import.meta.env.BASE_URL + "Anime.png",
       github: "https://github.com/zubaidi-1/toDo/",
     },
   ];
@@ -71,11 +71,13 @@ export default function Projects() {
   };
 
   return (
-    <div className="min-h-screen bg-[#2c2c2c] px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center">
+    <div className="min-h-screen bg-[#2c2c2c] px-4 py-12 flex flex-col gap-14 md:grid md:grid-cols-2 md:gap-10 place-items-center">
       {/* Skills Section */}
       <div className="w-full max-w-xl">
-        <h2 className="text-white text-3xl mb-6">Skills</h2>
-        <div className="flex flex-wrap gap-4">
+        <h2 className="text-white text-3xl mb-6 text-center md:text-left">
+          Skills
+        </h2>
+        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
           {skills.map((skill, index) => (
             <motion.span
               key={index}
@@ -84,7 +86,7 @@ export default function Projects() {
               className="flex gap-2 items-center bg-[#d62828] p-4 rounded text-white w-[48%] cursor-pointer shadow-md"
             >
               {skill.icon}
-              <p className="text-lg">{skill.label}</p>
+              <p className="text-base md:text-lg">{skill.label}</p>
             </motion.span>
           ))}
         </div>
@@ -102,10 +104,11 @@ export default function Projects() {
               key={current}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
               transition={{ type: "spring", stiffness: 200 }}
               className="bg-[#3a3a3a] rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
             >
-              <div className="w-full md:w-1/2 h-64 md:h-auto">
+              <div className="w-full md:w-1/2 h-56 md:h-auto">
                 <img
                   src={projects[current].imagePath}
                   alt={projects[current].name}
@@ -117,7 +120,7 @@ export default function Projects() {
                   <h3 className="text-2xl font-semibold mb-2">
                     {projects[current].name}
                   </h3>
-                  <p className="text-gray-200">
+                  <p className="text-sm md:text-base text-gray-200">
                     {projects[current].description}
                   </p>
                 </div>
@@ -132,7 +135,7 @@ export default function Projects() {
                     <FaGithub size={24} />
                   </a>
 
-                  {projects[current].live ? (
+                  {projects[current].live && (
                     <a
                       href={projects[current].live}
                       target="_blank"
@@ -142,8 +145,6 @@ export default function Projects() {
                     >
                       <FaExternalLinkAlt size={20} />
                     </a>
-                  ) : (
-                    ""
                   )}
                 </div>
               </div>
@@ -154,7 +155,7 @@ export default function Projects() {
           <div className="flex justify-center mt-6 gap-6">
             <button
               onClick={handlePrev}
-              className="bg-[#d62828] text-white p-3 rounded-full shadow-lg hover:bg-[#bb2020] transition duration-300"
+              className="w-12 h-12 bg-[#d62828] text-white flex items-center justify-center rounded-full shadow-lg hover:bg-[#bb2020] transition duration-300"
               aria-label="Previous Project"
             >
               <svg
@@ -174,7 +175,7 @@ export default function Projects() {
             </button>
             <button
               onClick={handleNext}
-              className="bg-[#d62828] text-white p-3 rounded-full shadow-lg hover:bg-[#bb2020] transition duration-300"
+              className="w-12 h-12 bg-[#d62828] text-white flex items-center justify-center rounded-full shadow-lg hover:bg-[#bb2020] transition duration-300"
               aria-label="Next Project"
             >
               <svg
