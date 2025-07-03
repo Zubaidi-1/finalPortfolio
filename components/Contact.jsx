@@ -6,7 +6,7 @@ export default function Contact() {
     <div className="min-h-screen bg-[#1e1f36] text-white px-6 py-12 flex flex-col items-center gap-12 justify-center">
       {/* Image at the top */}
       <img
-        src="/finalPortfolio/1651928251633.jpg"
+        src={import.meta.env.BASE_URL + "1651928251633.jpg"}
         alt="Profile"
         className="w-40 h-40 rounded-full object-cover shadow-lg border-4 border-[#d62828]"
       />
@@ -42,7 +42,7 @@ export default function Contact() {
           <FaLinkedin />
         </a>
         <a
-          href="/finalPortfolio/yourcv.pdf"
+          href={import.meta.env.BASE_URL + "yourcv.pdf"}
           download
           className="bg-[#d62828] px-6 py-2 rounded text-white text-base hover:bg-[#a61c1c] transition-colors"
         >

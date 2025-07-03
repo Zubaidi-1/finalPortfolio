@@ -8,7 +8,7 @@ import {
   FaExternalLinkAlt,
 } from "react-icons/fa";
 import { TbBrandMysql, TbBrandTailwind } from "react-icons/tb";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const skills = [
@@ -99,57 +99,54 @@ export default function Projects() {
         </h2>
 
         <div className="relative">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ type: "spring", stiffness: 200 }}
-              className="bg-[#3a3a3a] rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
-            >
-              <div className="w-full md:w-1/2 h-56 md:h-auto">
-                <img
-                  src={projects[current].imagePath}
-                  alt={projects[current].name}
-                  className="w-full h-full object-cover"
-                />
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            className="bg-[#3a3a3a] rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
+          >
+            <div className="w-full md:w-1/2 h-56 md:h-auto">
+              <img
+                src={projects[current].imagePath}
+                alt={projects[current].name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-6 text-white bg-[#d62828] flex flex-col justify-between w-full">
+              <div>
+                <h3 className="text-2xl font-semibold mb-2">
+                  {projects[current].name}
+                </h3>
+                <p className="text-sm md:text-base text-gray-200">
+                  {projects[current].description}
+                </p>
               </div>
-              <div className="p-6 text-white bg-[#d62828] flex flex-col justify-between w-full">
-                <div>
-                  <h3 className="text-2xl font-semibold mb-2">
-                    {projects[current].name}
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-200">
-                    {projects[current].description}
-                  </p>
-                </div>
-                <div className="pt-6 flex gap-4">
+              <div className="pt-6 flex gap-4">
+                <a
+                  href={projects[current].github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-black transition"
+                  aria-label="GitHub"
+                >
+                  <FaGithub size={24} />
+                </a>
+
+                {projects[current].live && (
                   <a
-                    href={projects[current].github}
+                    href={projects[current].live}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-black transition"
-                    aria-label="GitHub"
+                    aria-label="Live Site"
                   >
-                    <FaGithub size={24} />
+                    <FaExternalLinkAlt size={20} />
                   </a>
-
-                  {projects[current].live && (
-                    <a
-                      href={projects[current].live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-black transition"
-                      aria-label="Live Site"
-                    >
-                      <FaExternalLinkAlt size={20} />
-                    </a>
-                  )}
-                </div>
+                )}
               </div>
-            </motion.div>
-          </AnimatePresence>
+            </div>
+          </motion.div>
 
           {/* Arrows */}
           <div className="flex justify-center mt-6 gap-6">
