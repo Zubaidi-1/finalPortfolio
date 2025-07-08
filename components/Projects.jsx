@@ -34,7 +34,7 @@ export default function Projects() {
       description:
         "A website for people to post, like and follow other users. Built with React, Tailwind CSS and NodeJS.",
       imagePath: import.meta.env.BASE_URL + "social.png",
-      github: "https://github.com/zubaidi-1/SocialMedia",
+      github: "https://github.com/zubaidi-1/Social",
     },
     {
       name: "Sudoko",
@@ -49,14 +49,14 @@ export default function Projects() {
       description:
         "An Expenses tracker, With different categories. Built with React, Tailwind CSS and NodeJS.",
       imagePath: import.meta.env.BASE_URL + "expense.png",
-      github: "https://github.com/zubaidi-1/toDo/",
+      github: "https://github.com/zubaidi-1/expense/",
     },
     {
       name: "Anime",
       description:
         "An Anime Website, With different categories. Built with React, Tailwind CSS and NodeJS.",
       imagePath: import.meta.env.BASE_URL + "Anime.png",
-      github: "https://github.com/zubaidi-1/toDo/",
+      github: "https://github.com/zubaidi-1/anime/",
     },
   ];
 
